@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport"  content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css"/>
+		<title>吐槽墙</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h2>吐槽墙</h2>
+				<button class="btn btn-success pull-right" id="btn-click">
+					我要吐槽
+				</button>
+			</div>
+
+			<div class="cos-wall">
+				<!--<div class="cos-content"></div>-->
+			</div>
+
+		</div>
+		<!--遮罩层-->
+		<div class="mask">
+			<div class="container" id="cos-pub">
+				<button type="button" class="close" id="btn-close">
+					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<h2>有何高招</h2>
+				<form action="{:U('handle')}" method="" role="form">
+					<input style="display: none;" id="userID" name="userID" value="11061192" />
+					<textarea name="cos-text" id="cos-text" rows="8" class="form-control" placeholder="吐槽~" required></textarea>
+					<input type="submit" class="btn btn-danger" id="sub-cos" data-container="body"  value="发表"/>
+				</form>
+			</div>
+		</div>
+	</body>
+		<script src="__PUBLIC__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__PUBLIC__/js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__PUBLIC__/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__PUBLIC__/js/cosWall.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			var handleUrl = '{:U("Index/handle")}'
+		</script>
+</html>
