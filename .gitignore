@@ -34,9 +34,3 @@ Icon
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
-
-# 自定义添加的文件及文件夹
-/ThinkPHP/
-/.settings/
-/CosWall/Runtime/
-
