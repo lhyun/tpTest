@@ -1,3 +1,4 @@
+/*ÄÚÈÝ*/
 .container .page-header h2{
 	display: inline-block;
 }
@@ -15,6 +16,11 @@
 	padding: 15px;
 	margin: 20px;
 	border: 1px solid #C7254E;
+}
+.container .cos-wall .cos-content .date{
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
 }
 
 /*
@@ -82,3 +88,4 @@
 	font-size: 20px;
 	color:#333;
 }
+

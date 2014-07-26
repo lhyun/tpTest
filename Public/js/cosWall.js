@@ -3,7 +3,6 @@ var $cosPub = $(document.getElementById('cos-pub'));
 var $subCos = $(document.getElementById('sub-cos'));
 var $cosWall = $(".cos-wall"), $btnClose = $(".close");
 
-$(function() {
 	function posRandom() {
 		var rx = parseInt(Math.random() * ($(".cos-wall").width() - 220));
 		var ry = parseInt(Math.random() * ($(".cos-wall").height() - 150));
@@ -103,6 +102,7 @@ $(function() {
 			function (msg){
 				if(msg.status == 1){
 					var _div = "<div class = 'cos-content'>"+cosTextVal+ "</div>";
+//					var _span = "<span class = 'date'> "+ msg.date + "</span>"
 					$cosWall.append(_div);
 					setOneCos($cosWall.find("div:last"));
 					draggableNote();
@@ -130,5 +130,8 @@ $(function() {
 		$cosPub.fadeOut(300);
 		$('.mask').fadeOut(300);
 	});
-});
+	
+$(function(){
+	setCosWall();
+})
 

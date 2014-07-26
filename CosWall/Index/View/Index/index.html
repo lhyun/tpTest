@@ -3,20 +3,26 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport"  content="width=device-width, initial-scale=1"/>
-		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap.css"/>
-		<link rel="stylesheet" type="text/css" href="__PUBLIC__/css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/style.css"/>
 		<title>吐槽墙</title>
 	</head>
 	<body>
 		<div class="container">
 			<div class="page-header">
 				<h2>吐槽墙</h2>
+			
 				<button class="btn btn-success pull-right" id="btn-click">
 					我要吐槽
 				</button>
 			</div>
 
 			<div class="cos-wall">
+				<foreach name="data" item = "vo">
+					<div class="cos-content">{$vo.content}
+					<!--<span class='date'>{$vo.date  |date='y-m-d',###}</span>-->
+					</div>
+				</foreach>
 				<!--<div class="cos-content"></div>-->
 			</div>
 
@@ -28,18 +34,18 @@
 					<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 				</button>
 				<h2>有何高招</h2>
-				<form action="{:U('handle')}" method="" role="form">
+				<form action="" method="" role="form">
 					<input style="display: none;" id="userID" name="userID" value="11061192" />
 					<textarea name="cos-text" id="cos-text" rows="8" class="form-control" placeholder="吐槽~" required></textarea>
-					<input type="submit" class="btn btn-danger" id="sub-cos" data-container="body"  value="发表"/>
+					<input type="button" class="btn btn-danger" id="sub-cos" data-container="body"  value="发表"/>
 				</form>
 			</div>
 		</div>
 	</body>
-		<script src="__PUBLIC__/js/jquery.js" type="text/javascript" charset="utf-8"></script>
-		<script src="__PUBLIC__/js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
-		<script src="__PUBLIC__/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-		<script src="__PUBLIC__/js/cosWall.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__PUBLIC__/Js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__PUBLIC__/Js/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__PUBLIC__/Js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__PUBLIC__/Js/cosWall.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript" charset="utf-8">
 			var handleUrl = '{:U("Index/handle")}'
 		</script>
