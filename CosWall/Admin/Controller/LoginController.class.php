@@ -12,7 +12,9 @@ class LoginController extends Controller {
 		}
 		$userName = I("userName");
 		$pwd = I("pwd","","md5");
-		$user = M("amdin")->where(array('userName' => $userName))->find();
+		$Admin = M("admin");
+		var_dump($Admin->select());
+		$user = $Admin->where(array('userName' => $userName))->find();
 		$status = 2;
 		//用户名不存在
 		if(!$user){

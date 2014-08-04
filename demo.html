@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Ueditor Demo</title>
+		<script src="Public/Js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="Public/ueditor/ueditor.parse.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#html, #text {
+				display: none;
+			}
+
+		</style>
+	</head>
+	<body>
+		<form action="present.php" method="post" >
+			<script id="container" name="content" type="text/plain">
+				这里写你的初始化内容
+			</script>
+			<input type="text" name="uname" id="uname" value="" />
+			<input type="text" name="favo" id="favo" value="" />
+			<input type="text" name="html" id="html" value="" />
+			<input type="text" name="text" id="text" value=""  />
+			<input type="submit" value="提交"/>
+		</form>
+		<button id="t">
+			测试
+		</button>
+		<!-- 配置文件 -->
+		<script type="text/javascript" src="Public/ueditor/ueditor.config.js"></script>
+		<!-- 编辑器源码文件 -->
+		<script type="text/javascript" src="Public/ueditor/ueditor.all.js"></script>
+		<!-- 实例化编辑器 -->
+		<script type="text/javascript">
+			var ue = UE.getEditor('container');
+
+			//			$("#html").val = ue.getContent();
+			//			$("#text").val = ue.getContentTxt();
+			
+			$("#t").click(function() {
+				uParse('#container', {
+				rootPath : 'Public/ueditor'
+			})
+			})
+			//异步提交
+			//			$.post("present.php",
+			//			{
+			//				"uname":$("#uname").val(),
+			//				"favo":$("#favo").val(),
+			//				"html":ue.getContent(),
+			//				"txt":ue.getContentTxt()
+			//			}
+			//			)
+
+		</script>
+
+	</body>
+</html>

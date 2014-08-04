@@ -1,0 +1,222 @@
+/*内容*/
+body{
+	background:url(../Images/header-bg.jpg);
+}
+.container{
+	position: relative;
+}
+.container header {
+	height: 37px;
+}
+.container section{
+	position: absolute;
+	left: 220px;
+	top: 50px;
+	width: 450px;
+	height: 200px;
+}
+.container section h1{
+	color: #FFFFFF;
+	text-align: center;
+}
+.container section p{
+	font-family: "微软雅黑";
+	color: #D9EDF7;
+	
+}
+
+.container #content{
+	position: absolute;
+	top:50px;
+}
+.container .cos-wall {
+	position: relative;
+	width: 100%;
+	height: 586px;
+	border: 1px solid #428BCA;
+}
+/*设置三维翻转*/
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+	border: 1px #333333 solid;
+	transform-style: preserve-3d;
+	height: 195px;
+	width: 195px;
+	position: absolute;
+	top: 40px;
+}
+#flip-toggle1,#flip-toggle2{
+	top: 0px;
+}
+#flip-toggle3,#flip-toggle4,#flip-toggle5,#flip-toggle6,#flip-toggle7,#flip-toggle8{
+	top: 195px;
+}
+#flip-toggle9,#flip-toggle10,#flip-toggle11{
+	top: 390px;
+}
+
+#flip-toggle1,#flip-toggle7,#flip-toggle11{
+	left:780px;
+}
+#flip-toggle2,#flip-toggle8{
+	left: 975px;
+}
+#flip-toggle3{
+	left: 0px;
+}
+#flip-toggle4{
+	left: 195px;
+}
+#flip-toggle5,#flip-toggle9{
+	left: 390px;
+}
+#flip-toggle6,#flip-toggle10{
+	left: 585px;
+}
+
+//* entire container, keeps perspective */
+	/*  UPDATED! flip the pane when hovered */
+	.flip-container:hover .back {
+		transform: rotateY(0deg);
+	}
+	.flip-container:hover .front {
+	    transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 320px;
+	height: 480px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/*  UPDATED! front pane, placed above back */
+.front {
+	z-index: 2;
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(-180deg);
+}
+
+/* 
+	Some vertical flip updates 
+*/
+.vertical.flip-container {
+	position: relative;
+}
+
+	.vertical .back {
+		transform: rotateX(180deg);
+	}
+
+	.vertical.flip-container:hover .back {
+	    transform: rotateX(0deg);
+	}
+
+	.vertical.flip-container:hover .front {
+	    transform: rotateX(180deg);
+	}
+/*三维翻转结束*/
+.container .cos-wall .cos-content {
+	position: absolute;
+	display: inline;
+	width: 220px;
+	height: 150px;
+	padding: 15px;
+	margin: 20px;
+	border: 1px solid #C7254E;
+	
+}
+.container .cos-wall .cos-content .date {
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+/*
+ * 发表
+ */
+/*遮罩层*/
+.mask {
+	display: none;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: rgba(0, 0, 0, 0.4);
+	/*-moz-opacity: 0.7;
+	 opacity:.70;
+	 filter: alpha(opacity=70);*/
+	z-index: 9999;
+}
+
+#cos-pub {
+	display: none;
+	position: relative;
+	top: 130px;
+	width: 532px;
+	height: 387px;
+	background: #FFFFFF;
+	border-radius: 2px;
+	overflow: hidden;
+}
+#cos-pub form {
+	position: absolute;
+	top: 88px;
+	left: 37px;
+	width: 460px;
+	height: 260px;
+}
+#cos-pub form textarea {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 460px;
+	height: 220px;
+	background-color: #F7F8ED;
+	resize: none;
+}
+
+#cos-pub form #sub-cos {
+	position: absolute;
+	top: 243px;
+	left: 377px;
+	padding-left: 25px;
+	padding-right: 25px;
+	font-weight: 200;
+}
+#cos-pub #btn-close {
+	position: absolute;
+	top: 10px;
+	right: 14px;
+}
+#cos-pub h2 {
+	position: absolute;
+	top: 16px;
+	left: 37px;
+	font-size: 20px;
+	color: #333;
+}
+
