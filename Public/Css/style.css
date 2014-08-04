@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*内容*/
 body{
 	background:url(../Images/header-bg.jpg);
@@ -35,10 +36,43 @@ body{
 	position: absolute;
 	top:50px;
 }
+=======
+/*内容*/
+body{
+	background:url(../Images/header-bg.jpg);
+}
+.container{
+	position: relative;
+}
+.container header {
+	height: 37px;
+}
+.container section{
+	position: absolute;
+	left: 220px;
+	top: 50px;
+	width: 450px;
+	height: 200px;
+}
+.container section h1{
+	color: #FFFFFF;
+	text-align: center;
+}
+.container section p{
+	font-family: "微软雅黑";
+	color: #D9EDF7;
+	
+}
+
+.container #content{
+	position: absolute;
+	top:50px;
+}
+>>>>>>> origin/master1
 .container .cos-wall {
 	position: relative;
 	width: 100%;
-	height: 550px;
+	height: 586px;
 	border: 1px solid #428BCA;
 }
 /*设置三维翻转*/
@@ -146,8 +180,9 @@ body{
 }
 
 /*
- * ����
+ * 发表
  */
+<<<<<<< HEAD
 <<<<<<< HEAD
 /*遮罩层*/
 .mask {
@@ -155,6 +190,10 @@ body{
 /*���ֲ�*/
 .mask{
 >>>>>>> parent of fc07c70... before UI change
+=======
+/*遮罩层*/
+.mask {
+>>>>>>> origin/master1
 	display: none;
 	width: 100%;
 	height: 100%;
