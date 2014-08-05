@@ -1,129 +1,14 @@
-/*内容*/
 body{
-	background:url(../Images/header-bg.jpg);
+	background: url(../Images/bg.jpg) no-repeat;
+	background-size:100%;
 }
-.container{
-	position: relative;
-}
-.container header {
-	height: 37px;
-}
-.container section{
-	position: absolute;
-	left: 220px;
-	top: 50px;
-	width: 450px;
-	height: 200px;
-}
-.container section h1{
-	color: #FFFFFF;
-	text-align: center;
-}
-.container section p{
-	font-family: "微软雅黑";
-	color: #D9EDF7;
-	
-}
-
-.container #content{
-	position: absolute;
-	top:50px;
-}
-.container .cos-wall {
+.container .cos-wall{
 	position: relative;
 	width: 100%;
-	height: 586px;
+	height: 550px;
 	border: 1px solid #428BCA;
 }
-/*设置三维翻转*/
-/* entire container, keeps perspective */
-.flip-container {
-	perspective: 1000;
-	border: 1px #333333 solid;
-	height: 195px;
-	width: 195px;
-	position: absolute;
-	top: 40px;
-}
-#flip-toggle1,#flip-toggle2{
-	top: 0px;
-}
-#flip-toggle3,#flip-toggle4,#flip-toggle5,#flip-toggle6,#flip-toggle7,#flip-toggle8{
-	top: 195px;
-}
-#flip-toggle9,#flip-toggle10,#flip-toggle11{
-	top: 390px;
-}
-
-#flip-toggle1,#flip-toggle7,#flip-toggle11{
-	left:780px;
-}
-#flip-toggle2,#flip-toggle8{
-	left: 975px;
-}
-#flip-toggle3{
-	left: 0px;
-}
-#flip-toggle4{
-	left: 195px;
-}
-#flip-toggle5,#flip-toggle9{
-	left: 390px;
-}
-#flip-toggle6,#flip-toggle10{
-	left: 585px;
-}
-
-/* flip the pane when hovered */
-.flip-container:hover .flipper, .flip-container.hover .flipper, .flip-container.flip .flipper {
-	transform: rotateY(180deg);
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility:hidden; 	/* Firefox */
-	-ms-backface-visibility:hidden; 
-	backface-visibility: hidden;
-}
-
-.flip-container, .front, .back {
-	width: 195px;
-	height: 195px;
-}
-
-/* flip speed goes here */
-.flipper {
-	transition: 0.6s;
-	transform-style: preserve-3d;
-	position: relative;
-	behavior:url(../PIE-2.0beta1/PIE.htc);
-}
-
-/* hide back of pane during swap */
-.front, .back {
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility:hidden; 	/* Firefox */
-	-ms-backface-visibility:hidden; 
-	backface-visibility: hidden;
-	position: absolute;
-	top: 0;
-	left: 0;
-	behavior:url(../PIE-2.0beta1/PIE.htc);
-}
-.front *,.back *{
-	padding: 7px;
-	color: #FFFFFF;
-}
-
-/* front pane, placed above back */
-.front {
-	z-index: 2;
-}
-
-/* back, initially hidden pane */
-.back {
-	transform: rotateY(180deg);
-	behavior:url(../PIE-2.0beta1/PIE.htc);
-}
-/*三维翻转结束*/
-.container .cos-wall .cos-content {
+.container .cos-wall .cos-content{
 	position: absolute;
 	display: inline;
 	width: 220px;
@@ -131,19 +16,18 @@ body{
 	padding: 15px;
 	margin: 20px;
 	border: 1px solid #C7254E;
-	
 }
-.container .cos-wall .cos-content .date {
+.container .cos-wall .cos-content .date{
 	position: absolute;
 	bottom: 0px;
 	right: 0px;
 }
 
 /*
- * 发表
+ * ·¢±í
  */
-/*遮罩层*/
-.mask {
+/*ÕÚÕÖ²ã*/
+.mask{
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -152,12 +36,12 @@ body{
 	left: 0px;
 	background: rgba(0, 0, 0, 0.4);
 	/*-moz-opacity: 0.7;
-	 opacity:.70;
-	 filter: alpha(opacity=70);*/
+	opacity:.70;
+	filter: alpha(opacity=70);*/
 	z-index: 9999;
 }
 
-#cos-pub {
+#cos-pub{
 	display: none;
 	position: relative;
 	top: 130px;
@@ -167,14 +51,14 @@ body{
 	border-radius: 2px;
 	overflow: hidden;
 }
-#cos-pub form {
+#cos-pub form{
 	position: absolute;
 	top: 88px;
 	left: 37px;
 	width: 460px;
 	height: 260px;
 }
-#cos-pub form textarea {
+#cos-pub form textarea{
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -184,7 +68,7 @@ body{
 	resize: none;
 }
 
-#cos-pub form #sub-cos {
+#cos-pub form #sub-cos{
 	position: absolute;
 	top: 243px;
 	left: 377px;
@@ -192,16 +76,15 @@ body{
 	padding-right: 25px;
 	font-weight: 200;
 }
-#cos-pub #btn-close {
+#cos-pub #btn-close{
 	position: absolute;
 	top: 10px;
 	right: 14px;
 }
-#cos-pub h2 {
+#cos-pub h2{
 	position: absolute;
 	top: 16px;
 	left: 37px;
 	font-size: 20px;
-	color: #333;
+	color:#333;
 }
-

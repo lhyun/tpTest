@@ -4,5 +4,5 @@ return array(
 	'DB_USER' => 'root',
 	'DB_PWD' => '19930123lwy',
 	'DB_NAME' => 'ihome',
-	'DB_PREFIX' =>  'cos_'
+	'DB_PREFIX' =>  ''
 );
