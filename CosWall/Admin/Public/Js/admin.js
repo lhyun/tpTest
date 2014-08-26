@@ -44,9 +44,24 @@
 	
 	//设置提醒
 	function setTips($item,tips){
-		$item.html(tips);
+		$item.text(tips);
 		$item.css({"display":""});
 	}
+	//回调
+	function _callBack(msg) {
+			//用户名不存在
+			alert(1);
+			if (msg.status == 0) {
+				
+				setTips($infoUserName,"用户名不存在");
+			}
+			//用户名密码不匹配
+			else if (msg.status == 1) {
+				setTips($infoPwd,"用户名密码不匹配");
+				
+			}
+			
+		}
 
 	var $userName = $("#user-name"),
 		$pwd = $("#password"),
@@ -82,16 +97,18 @@
 			"userName" : $userName.val(),
 			"pwd" : $pwd.val()
 		}, function(msg) {
-			//用户名不存在
-			if (msg.status == 0) {
-				setTips($infoUserName,"用户名不存在");
-				return false;
-			}
-			//用户名密码不匹配
-			if (msg.status == 1) {
-				setTips($infoPwd,"用户名密码不匹配");
-				return false;
-			}
+				//用户名不存在
+				if(msg.status == 0){
+					setTips($infoUserName,"用户名不存在");
+					return;
+				}
+				//用户名密码不匹配
+				if(msg.status == 1){
+					setTips($infoPwd,"用户名密码不匹配");
+					return;
+				}
+				//验证通过
+				window.location.href = "http://localhost/tptest/index.php/admin/index/index";
 		});
 	}
 

@@ -2,37 +2,37 @@ var $cosText = $(document.getElementById('cos-text'));
 var $cosPub = $(document.getElementById('cos-pub'));
 var $subCos = $(document.getElementById('sub-cos'));
 var $cosWall = $(".cos-wall"), $btnClose = $(".close");
-var usedArray = new Array();
-/*随机取出数组中num个不重复元素*/
-function getArrayItems(arr, num) {
-	//新建一个数组,将传入的数组复制过来,用于运算,而不要直接操作传入的数组;
-	var temp_array = new Array();
-	for (var index in arr) {
-		temp_array.push(arr[index]);
+
+var navFlag = 0;
+//左侧导航栏
+function _slide(){
+	if(navFlag == 0){
+		$(".lnav").animate({left:"+=145px"},350);
+		navFlag = 1;
 	}
-	//取出的数值项,保存在此数组
-	var return_array = new Array();
-	for (var i = 0; i < num; i++) {
-		//判断如果数组还有可以取出的元素,以防下标越界
-		if (temp_array.length > 0) {
-			//在数组中产生一个随机索引
-			var arrIndex = Math.floor(Math.random() * temp_array.length);
-			//将此随机索引的对应的数组元素值复制出来
-			return_array[i] = temp_array[arrIndex];
-			//然后删掉此索引的数组元素,这时候temp_array变为新的数组
-			temp_array.splice(arrIndex, 1);
-		} else {
-			//数组中数据项取完后,退出循环,比如数组本来只有10项,但要求取出20项.
-			break;
-		}
+	else{
+		$(".lnav").animate({left:"-=145px"},350);
+		navFlag = 0;
 	}
-	return return_array;
 }
-
-
+$("#lhead a").click(function(){
+	_slide();
+});
+$("#lhead a").hover(function(){
+	if(navFlag == 0){
+		$(".lnav").animate({left:"+=145px"},350);
+		navFlag = 1;
+	}
+});
+$(".lnav").mouseleave(function(){
+	if(navFlag == 1){
+		$(".lnav").animate({left:"-=145px"},350);
+		navFlag = 0;
+	}
+});
 function posRandom() {
-	var rx = parseInt(Math.random() * ($(".cos-wall").width() - 220));
-	var ry = parseInt(Math.random() * ($(".cos-wall").height() - 150));
+	var rx = parseInt(Math.random() * ($(".cos-wall").width() - 225));
+	var ry = parseInt(Math.random() * ($(".cos-wall").height() - 200));
 	var randomLeft = Math.floor($(".cos-wall").width() * (Math.random())) + 25, randomTop = Math.floor($('.cos-wall').height() * (Math.random())) + 25, randomRotate = 20 - Math.floor(40 * Math.random());
 	/* 旋转角度 */
 	return {
@@ -85,7 +85,7 @@ function draggableNote() {
 
 // 设置每个cos背景
 function setback() {
-	var arr = new Array('#33CC66', '#CCFF66', '#FF99CC', '#FF9999', '#FFCC99', "#666699", "#CCCCCC");
+	var arr = new Array('#66CCCC', '#CCFF66', '#FF99CC', '#FF9999', '#FFCC99', "#666699", "#CCCCCC");
 	return arr[parseInt(Math.random() * 7)];
 }
 
@@ -131,19 +131,12 @@ $subCos.click(function() {
 			'cosTextVal' : cosTextVal
 		}, function(msg) {
 			if (msg.status == 1) {
-//				var _div = "<div class = 'cos-content'>" + cosTextVal + "</div>";
-//				//					var _span = "<span class = 'date'> "+ msg.date + "</span>"
-//				$cosWall.append(_div);
-//				setOneCos($cosWall.find("div:last"));
-//				draggableNote();
-				data[data.lengh] = {
-					"id" :data[lengh-1].id,
-					"content":cosTextVal
-				};
-				var _p = "<p>"+ cosTextVal + "</p>";
-				var _id = "#flip-toggle11"+(parseInt(11*Math.random())+1);
+				var _div = "<span class='glyphicon glyphicon-user'></span><div class = 'cos-content'>" + cosTextVal + "</div>";
+				//					var _span = "<span class = 'date'> "+ msg.date + "</span>"
 				
-				$(_id+" .flipper .front p").text(cosTextVal);
+				$cosWall.append(_div);
+				setOneCos($cosWall.find("div:last"));
+				draggableNote();
 				$cosPub.fadeOut(300);
 				$('.mask').fadeOut(300);
 			} else
@@ -168,46 +161,6 @@ $("#btn-close").click(function() {
 	$('.mask').fadeOut(300);
 });
 
-//$(function() {
-//	setCosWall();
-//
-//});
-
-function display(){
-	var tmp =  getArrayItems(data,22);
-	usedArray = tmp;
-	var tmpLength = tmp.length;
-	var j=0;
-	var atmp = [1,2,3,4,5,6,7,8,9,10,11];
-	atmp = getArrayItems(atmp,11);
-	for (i = 0,j=0;i < tmpLength;i=i+2,j++){
-		var _p = "<p>"+tmp[i].content + "</p>";
-		var _id = "#flip-toggle"+(atmp[j]);
-		$(_id+" .flipper .front p").text(tmp[i].content);
-		if(i == tmpLength){
-			return;
-		}
-		
-		_p = "<p>"+tmp[i+1].content+ "</p>";
-		$(_id+" .flipper .back p").text(tmp[i].content);
-	}
-}
-
-function autodisp(){
-	var atmp = [1,2,3,4,5,6,7,8,9,10,11];
-	atmp = getArrayItems(atmp,parseInt(4*Math.random())+1);
-	for(i=0;i < atmp.lengh;i++){
-		var _id =  "flip-toggle"+(atmp[i]);
-		document.getElementById(_id).classList.toggle('hover');
-	}
-}
-$(function(){
-	$('.front').each(function() {
-		$(this).css("background", setback());
-	});
-	$('.back').each(function() {
-		$(this).css("background", setback());
-	});
-	display();
-	setInterval("autodisp()",900);
+$(function() {
+	setCosWall();
 })

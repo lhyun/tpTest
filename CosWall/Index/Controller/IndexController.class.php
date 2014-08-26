@@ -7,7 +7,7 @@ use Think\Controller;
 class IndexController extends Controller {
 	public function index() {
 		
-		$this->assign('data',M('wall')->select());
+		$this->assign('data',M('cos_wall')->select());
 		$this -> display();
 	}
 
@@ -20,7 +20,7 @@ class IndexController extends Controller {
 			'user_id' => I('userID'),
 			'date' => time()
 		);
-		if(M("wall")->data($data)->add()){
+		if(M("cos_wall")->data($data)->add()){
 			$data['date'] = date('y-m-d',$data['date']);
 			$data['status'] = 1;
 			$this -> ajaxReturn($data, 'json');
